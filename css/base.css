@@ -1,0 +1,135 @@
+/* ============================================
+   base.css — Global Reset, Tokens, Typography
+   אתר הנצחה — עורב נוב 21
+   ============================================ */
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  --bg: #0d1117;
+  --bg-card: #161b22;
+  --bg-overlay: rgba(13, 17, 23, 0.7);
+  --gold: #c9a84c;
+  --gold-dim: rgba(201, 168, 76, 0.3);
+  --gold-glow: rgba(201, 168, 76, 0.15);
+  --text: #f0f0f0;
+  --text-muted: #8b949e;
+  --font: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --body-size: clamp(18px, 1.125rem + 0.2vw, 20px);
+  --heading-size: clamp(28px, 1.75rem + 0.5vw, 36px);
+  --heading-lg: clamp(36px, 2.25rem + 1vw, 56px);
+  --radius: 8px;
+  --transition: 0.3s ease;
+  --max-width: 1100px;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Base ---------- */
+html {
+  direction: rtl;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--body-size);
+  line-height: 1.7;
+  color: var(--text);
+  background-color: var(--bg);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4 {
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--text);
+}
+
+h1 {
+  font-size: var(--heading-lg);
+}
+
+h2 {
+  font-size: var(--heading-size);
+}
+
+h3 {
+  font-size: clamp(22px, 1.375rem + 0.3vw, 26px);
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+
+a:hover,
+a:focus-visible {
+  opacity: 0.8;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Utility ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

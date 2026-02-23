@@ -1,0 +1,170 @@
+/* ============================================
+   memorial.css — Page-Specific Layouts
+   אתר הנצחה — עורב נוב 21
+   ============================================ */
+
+/* ---------- Homepage — Cards Grid ---------- */
+.cards-section {
+    padding: 64px 24px 48px;
+}
+
+.cards-section__title {
+    text-align: center;
+    font-size: var(--heading-size);
+    color: var(--text);
+    margin-bottom: 40px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: var(--max-width);
+    margin-inline: auto;
+}
+
+/* ---------- Soldier Page Layout ---------- */
+.soldier-page {
+    padding-top: 0;
+}
+
+.soldier-page .top-nav {
+    background: linear-gradient(180deg,
+            rgba(13, 17, 23, 0.9) 0%,
+            rgba(13, 17, 23, 0.4) 60%,
+            transparent 100%);
+}
+
+/* ---------- Scroll Indicator ---------- */
+.scroll-indicator {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 13px;
+    animation: gentle-bounce 2.5s ease-in-out infinite;
+}
+
+.scroll-indicator__icon {
+    width: 24px;
+    height: 38px;
+    border: 2px solid var(--gold-dim);
+    border-radius: 12px;
+    position: relative;
+}
+
+.scroll-indicator__icon::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 2px;
+    animation: scroll-dot 2s ease-in-out infinite;
+}
+
+@keyframes gentle-bounce {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(8px);
+    }
+}
+
+@keyframes scroll-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+        top: 6px;
+    }
+
+    50% {
+        opacity: 0.3;
+        top: 16px;
+    }
+}
+
+/* ---------- Responsive — Tablet ---------- */
+@media (max-width: 900px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .soldier-hero__img {
+        height: 55vh;
+    }
+}
+
+/* ---------- Responsive — Mobile ---------- */
+@media (max-width: 600px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-inline: 8px;
+    }
+
+    .cards-section {
+        padding: 40px 16px 32px;
+    }
+
+    .hero__content {
+        padding: 24px 16px;
+    }
+
+    .soldier-hero__img {
+        height: 50vh;
+    }
+
+    .biography {
+        padding: 24px 16px 40px;
+    }
+
+    .quote-block {
+        margin-inline: 16px;
+        padding: 24px 20px 24px 16px;
+    }
+
+    .fell-together {
+        margin-inline: 16px;
+        padding: 24px 16px;
+    }
+
+    .gallery__item {
+        flex: 0 0 85vw;
+    }
+
+    .site-footer {
+        padding: 32px 16px;
+    }
+}
+
+/* ---------- Reduced Motion Override ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-indicator {
+        animation: none;
+    }
+
+    .scroll-indicator__icon::after {
+        animation: none;
+    }
+
+    .soldier-card__image,
+    .gallery__img {
+        transition: none;
+    }
+}

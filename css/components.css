@@ -1,0 +1,378 @@
+/* ============================================
+   components.css — Reusable Components
+   אתר הנצחה — עורב נוב 21
+   ============================================ */
+
+/* ---------- Hero ---------- */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    will-change: transform;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(13, 17, 23, 0.55) 0%,
+            rgba(13, 17, 23, 0.75) 60%,
+            var(--bg) 100%);
+    z-index: 1;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+    padding: 40px 24px;
+}
+
+.hero__title {
+    font-size: var(--heading-lg);
+    color: var(--gold);
+    margin-bottom: 16px;
+    letter-spacing: 0.03em;
+}
+
+.hero__subtitle {
+    font-size: clamp(16px, 1rem + 0.3vw, 20px);
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-inline: auto;
+    line-height: 1.8;
+}
+
+/* ---------- Soldier Card ---------- */
+.soldier-card {
+    display: block;
+    position: relative;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform var(--transition), box-shadow var(--transition);
+    min-height: 48px;
+}
+
+.soldier-card:hover,
+.soldier-card:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px var(--gold-glow);
+}
+
+.soldier-card:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+.soldier-card__image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+}
+
+.soldier-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.soldier-card:hover .soldier-card__image {
+    transform: scale(1.03);
+}
+
+.soldier-card__info {
+    padding: 20px 24px;
+    border-top: 2px solid var(--gold-dim);
+}
+
+.soldier-card__name {
+    font-size: clamp(20px, 1.25rem + 0.3vw, 24px);
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.soldier-card__dates {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ---------- Soldier Page Hero ---------- */
+.soldier-hero {
+    position: relative;
+    width: 100%;
+    max-height: 70vh;
+    overflow: hidden;
+}
+
+.soldier-hero__img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+.soldier-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg,
+            var(--bg) 0%,
+            rgba(13, 17, 23, 0.3) 50%,
+            transparent 100%);
+}
+
+/* ---------- Soldier Header ---------- */
+.soldier-header {
+    text-align: center;
+    padding: 40px 24px 32px;
+}
+
+.soldier-header__name {
+    font-size: var(--heading-lg);
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.soldier-header__dates {
+    font-size: clamp(16px, 1rem + 0.2vw, 18px);
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.soldier-header__dates .hebrew-date {
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* ---------- Biography ---------- */
+.biography {
+    max-width: 740px;
+    margin-inline: auto;
+    padding: 32px 24px 48px;
+}
+
+.biography__title {
+    font-size: var(--heading-size);
+    color: var(--gold);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.biography p {
+    margin-bottom: 1.2em;
+    line-height: 1.85;
+}
+
+/* ---------- Blockquote ---------- */
+.quote-block {
+    max-width: 700px;
+    margin: 32px auto 48px;
+    padding: 32px 32px 32px 24px;
+    border-right: 3px solid var(--gold);
+    background: var(--gold-glow);
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.quote-block__text {
+    font-size: clamp(18px, 1.125rem + 0.2vw, 22px);
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.quote-block__attribution {
+    font-size: 14px;
+    color: var(--gold);
+    font-style: normal;
+}
+
+/* ---------- Fell Together (נפלו יחד) ---------- */
+.fell-together {
+    max-width: 740px;
+    margin: 16px auto 48px;
+    padding: 32px 24px;
+    border-top: 1px solid var(--gold-dim);
+    border-bottom: 1px solid var(--gold-dim);
+    text-align: center;
+}
+
+.fell-together__title {
+    font-size: clamp(22px, 1.375rem + 0.3vw, 28px);
+    color: var(--gold);
+    margin-bottom: 16px;
+}
+
+.fell-together__text {
+    line-height: 1.8;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+.fell-together__link {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 24px;
+    border: 1px solid var(--gold);
+    border-radius: var(--radius);
+    color: var(--gold);
+    font-size: 16px;
+    min-width: 48px;
+    min-height: 48px;
+    line-height: 28px;
+    transition: background var(--transition), color var(--transition);
+}
+
+.fell-together__link:hover,
+.fell-together__link:focus-visible {
+    background: var(--gold);
+    color: var(--bg);
+    opacity: 1;
+}
+
+/* ---------- Photo Gallery ---------- */
+.gallery-section {
+    padding: 32px 0 64px;
+    overflow: hidden;
+}
+
+.gallery-section__title {
+    font-size: var(--heading-size);
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 24px;
+    padding-inline: 24px;
+}
+
+.gallery {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 24px 24px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold-dim) transparent;
+}
+
+.gallery::-webkit-scrollbar {
+    height: 6px;
+}
+
+.gallery::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.gallery::-webkit-scrollbar-thumb {
+    background: var(--gold-dim);
+    border-radius: 3px;
+}
+
+.gallery__item {
+    flex: 0 0 min(85vw, 400px);
+    scroll-snap-align: center;
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+}
+
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery__item:hover .gallery__img {
+    transform: scale(1.03);
+}
+
+/* ---------- Back Button ---------- */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    min-width: 48px;
+    min-height: 48px;
+    border: 1px solid var(--gold-dim);
+    border-radius: var(--radius);
+    color: var(--gold);
+    font-size: 16px;
+    font-family: var(--font);
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background var(--transition), border-color var(--transition);
+}
+
+.btn-back:hover,
+.btn-back:focus-visible {
+    background: var(--gold-glow);
+    border-color: var(--gold);
+    opacity: 1;
+}
+
+.btn-back__arrow {
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* ---------- Top Navigation ---------- */
+.top-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    padding: 16px 24px;
+    background: linear-gradient(180deg, var(--bg) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.top-nav .btn-back {
+    pointer-events: all;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    text-align: center;
+    padding: 48px 24px;
+    border-top: 1px solid var(--gold-dim);
+    margin-top: 32px;
+}
+
+.site-footer__unit {
+    font-size: 18px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.site-footer__location {
+    font-size: 14px;
+    color: var(--text-muted);
+}
