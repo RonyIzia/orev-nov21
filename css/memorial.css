@@ -104,9 +104,27 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
+}
 
+/* ---------- Desktop — Portrait Heights ---------- */
+@media (min-width: 768px) {
     .soldier-hero__img {
-        height: 55vh;
+        height: 85vh;
+        max-height: 900px;
+    }
+
+    body[class*='soldier-page'] .soldier-hero__img[src*='amit'] {
+        object-position: center 10%;
+    }
+
+    body[class*='soldier-page'] .soldier-hero__img[src*='hillel'] {
+        object-position: center 25%;
+    }
+
+    body[class*='soldier-page'] .soldier-hero__img[src*='ofir'] {
+        object-position: center center;
+        transform: scale(0.95);
+        transform-origin: center top;
     }
 }
 
@@ -127,11 +145,12 @@
     }
 
     .hero__bg {
-        background-position: 20% center;
+        background-size: 160%;
+        background-position: 60% center;
     }
 
     .soldier-hero__img {
-        height: 50vh;
+        height: 70vh;
     }
 
     .biography {

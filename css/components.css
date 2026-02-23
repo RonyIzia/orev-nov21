@@ -127,16 +127,33 @@
 .soldier-hero {
     position: relative;
     width: 100%;
-    max-height: 70vh;
     overflow: hidden;
 }
 
 .soldier-hero__img {
     width: 100%;
     height: 70vh;
+    max-height: 900px;
     object-fit: cover;
     object-position: center top;
     display: block;
+}
+
+/* Per-soldier portrait positioning */
+
+/* Amit — face + upper body focus */
+body[class*='soldier-page'] .soldier-hero__img[src*='amit'] {
+    object-position: center 15%;
+}
+
+/* Hillel — show the face, not just top of head */
+body[class*='soldier-page'] .soldier-hero__img[src*='hillel'] {
+    object-position: center 20%;
+}
+
+/* Ofir — center the face */
+body[class*='soldier-page'] .soldier-hero__img[src*='ofir'] {
+    object-position: center center;
 }
 
 .soldier-hero__overlay {
