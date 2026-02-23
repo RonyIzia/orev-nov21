@@ -65,10 +65,30 @@
     });
   }
 
+  /* ---------- Soldier card zoom-on-click ---------- */
+  function initCardZoom() {
+    var cards = document.querySelectorAll('.soldier-card');
+
+    cards.forEach(function (card) {
+      card.addEventListener('click', function (e) {
+        e.preventDefault();
+        var href = card.getAttribute('href');
+        if (!href) return;
+
+        card.classList.add('is-zooming');
+
+        setTimeout(function () {
+          window.location.href = href;
+        }, 400);
+      });
+    });
+  }
+
   /* ---------- Init ---------- */
   document.addEventListener('DOMContentLoaded', function () {
     initGalleryDrag();
     initGalleryKeyboard();
+    initCardZoom();
   });
 
 })();
