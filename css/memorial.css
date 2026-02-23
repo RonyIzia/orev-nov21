@@ -126,6 +126,10 @@
         padding: 24px 16px;
     }
 
+    .hero__bg {
+        background-position: 20% center;
+    }
+
     .soldier-hero__img {
         height: 50vh;
     }

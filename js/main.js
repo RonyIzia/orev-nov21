@@ -75,11 +75,11 @@
         var href = card.getAttribute('href');
         if (!href) return;
 
-        card.classList.add('is-zooming');
+        card.classList.add('zooming');
 
         setTimeout(function () {
           window.location.href = href;
-        }, 400);
+        }, 250);
       });
     });
   }
