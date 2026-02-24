@@ -153,8 +153,8 @@
     }
 
     .hero__bg {
-        background-size: 85% !important;
-        background-position: center 25% !important;
+        background-size: 100% !important;
+        background-position: center center !important;
         background-repeat: no-repeat !important;
     }
 
