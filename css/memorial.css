@@ -152,16 +152,6 @@
         padding: 24px 16px;
     }
 
-    .hero__bg {
-        background-size: cover !important;
-        background-position: center center !important;
-    }
-
-    .hero,
-    section.hero {
-        min-height: 100vh !important;
-        height: 100vh !important;
-    }
 
     .soldier-hero__img {
         height: 70vh;
