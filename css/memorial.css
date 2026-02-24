@@ -153,9 +153,14 @@
     }
 
     .hero__bg {
-        background-size: 100% !important;
+        background-size: cover !important;
         background-position: center center !important;
-        background-repeat: no-repeat !important;
+    }
+
+    .hero,
+    section.hero {
+        min-height: 100vh !important;
+        height: 100vh !important;
     }
 
     .soldier-hero__img {
