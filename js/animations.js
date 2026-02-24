@@ -29,11 +29,11 @@
 
         /* ---------- Homepage Animations ---------- */
 
-        // Hero parallax
+        // Hero scroll-driven zoom
         var heroBg = document.querySelector('.hero__bg');
         if (heroBg) {
             gsap.to(heroBg, {
-                yPercent: 25,
+                scale: 1.3,
                 ease: 'none',
                 scrollTrigger: {
                     trigger: '.hero',

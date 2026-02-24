@@ -20,11 +20,13 @@
 .hero__bg {
     position: absolute;
     inset: 0;
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    z-index: 0;
+    background-color: var(--bg);
+    transform-origin: center center;
     will-change: transform;
+    z-index: 0;
 }
 
 .hero::after {
@@ -52,14 +54,36 @@
 }
 
 .hero__subtitle {
-    font-size: clamp(16px, 1rem + 0.3vw, 20px);
-    color: var(--text-muted);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.75);
     max-width: 600px;
     margin-inline: auto;
     line-height: 1.8;
+    font-family: var(--font-body);
+    font-weight: 300;
 }
 
-/* ---------- Soldier Card ---------- */
+/* ---------- Raven Emoji ---------- */
+.hero__raven {
+    font-size: 2.5rem;
+    display: block;
+    margin: 0.8rem auto;
+    opacity: 0.85;
+    animation: gentle-float 4s ease-in-out infinite;
+}
+
+@keyframes gentle-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
 .soldier-card {
     display: block;
     position: relative;
@@ -68,13 +92,8 @@
     overflow: hidden;
     text-decoration: none;
     color: var(--text);
-    transition: transform 0.25s ease-in, opacity 0.25s ease-in, box-shadow var(--transition);
+    transition: transform var(--transition), box-shadow var(--transition);
     min-height: 48px;
-}
-
-.soldier-card.zooming {
-    transform: scale(1.15);
-    opacity: 0;
 }
 
 .soldier-card:hover,
