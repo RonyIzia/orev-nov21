@@ -154,7 +154,7 @@
     }
 
     .hero__bg {
-        background-size: cover !important;
+        background-size: 130% auto !important;
         background-position: 55% 45% !important;
     }
 
