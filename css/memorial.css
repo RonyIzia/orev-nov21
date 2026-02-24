@@ -131,20 +131,6 @@
         font-size: 1.2rem;
     }
 
-    .hero {
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding-top: 8vh;
-    }
-
-    .hero__content {
-        align-self: flex-start;
-        margin-top: 0;
-        padding-top: 6vh;
-        position: relative;
-        top: 0;
-    }
-
     .hero__bg {
         background-position: center 55%;
     }
