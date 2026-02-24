@@ -153,9 +153,9 @@
     }
 
     .hero__bg {
-        background-size: 90%;
-        background-position: center 30%;
-        background-repeat: no-repeat;
+        background-size: 85% !important;
+        background-position: center 25% !important;
+        background-repeat: no-repeat !important;
     }
 
     .soldier-hero__img {
