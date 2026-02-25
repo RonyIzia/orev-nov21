@@ -111,23 +111,13 @@
     .soldier-hero__img {
         height: 80vh;
         max-height: 900px;
+        object-fit: contain;
+        background-color: var(--bg);
     }
 
     .soldier-hero {
-        max-width: 900px;
-        margin-inline: auto;
-    }
-
-    body[class*='soldier-page'] .soldier-hero__img[src*='amit'] {
-        object-position: center 15%;
-    }
-
-    body[class*='soldier-page'] .soldier-hero__img[src*='hillel'] {
-        object-position: center 20%;
-    }
-
-    body[class*='soldier-page'] .soldier-hero__img[src*='ofir'] {
-        object-position: center center;
+        max-width: 100%;
+        background-color: var(--bg);
     }
 
     .hero__subtitle {
