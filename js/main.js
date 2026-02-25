@@ -72,6 +72,19 @@
 
     const heroVideo = document.querySelector('.hero__bg-video');
     if (heroVideo) {
+      const playPromise = heroVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          heroVideo.style.display = 'none';
+          const hero = document.querySelector('.hero');
+          if (hero) {
+            hero.style.backgroundImage = "url('assets/photos/corner.jpg')";
+            hero.style.backgroundSize = 'cover';
+            hero.style.backgroundPosition = 'center center';
+          }
+        });
+      }
+
       heroVideo.addEventListener('ended', () => {
         heroVideo.pause();
       });
