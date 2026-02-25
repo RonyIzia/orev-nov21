@@ -118,11 +118,11 @@
     }
 
     body[class*='soldier-page'] .soldier-hero__img[src*='hillel'] {
-        object-position: center 25%;
+        object-position: center 20%;
     }
 
     body[class*='soldier-page'] .soldier-hero__img[src*='ofir'] {
-        object-position: center 15%;
+        object-position: center center;
     }
 
     .hero__subtitle {
