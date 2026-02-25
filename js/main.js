@@ -69,6 +69,13 @@
   document.addEventListener('DOMContentLoaded', function () {
     initGalleryDrag();
     initGalleryKeyboard();
+
+    const heroVideo = document.querySelector('.hero__bg-video');
+    if (heroVideo) {
+      heroVideo.addEventListener('ended', () => {
+        heroVideo.pause();
+      });
+    }
   });
 
 })();
