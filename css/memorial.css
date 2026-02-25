@@ -113,8 +113,13 @@
         max-height: 900px;
     }
 
+    .soldier-hero {
+        max-width: 900px;
+        margin-inline: auto;
+    }
+
     body[class*='soldier-page'] .soldier-hero__img[src*='amit'] {
-        object-position: center 10%;
+        object-position: center 15%;
     }
 
     body[class*='soldier-page'] .soldier-hero__img[src*='hillel'] {
