@@ -452,3 +452,32 @@ body[class*='soldier-page'] .soldier-hero__img[src*='ofir'] {
 #card-ofir .soldier-card__image {
     object-position: center 20%;
 }
+
+/* ---------- Instagram Memorial ---------- */
+.instagram-memorial {
+    text-align: center;
+    padding: 32px 24px;
+}
+
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+.instagram-link:hover {
+    opacity: 1;
+}
+
+.instagram-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
